@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+<form method="post" action="/update">
+<div>
+	<span>类别名称：</span>	
+	<span>
+		<input type="text" name="category_name" id="category_name" value="<%= category[0].category_name %>">
+	</span>
+</div>
+<div>
+	<span>类别状态：</span>	
+	<span>
+		<select name="category_status" id="category_status">
+			<option value="0" <%if (category[0].status==0){%>selected<%}%>>开放</option>	
+			<option value="1" <%if (category[0].status==1){%>selected<%}%>>关闭</option>	
+		</select>
+	</span>
+</div>
+<div>
+	<span>
+		<input type="hidden" name="category_id" id="category_id" value="<%= category[0].id%>"/>
+		<input type="submit" value="提交修改"/>
+	</span>
+</div>
+</form>
+</body>
+</html>

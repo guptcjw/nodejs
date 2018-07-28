@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.14.1/moment.min.js"></script>
+</head>
+<body>
+<a href="add">新增博客</a>	
+<table>
+	<tr>
+		<th>类别名称</th>
+		<th>标题</th>
+		<th>时间</th>
+		<th>状态</th>
+		<th>编辑</th>
+	</tr>
+	<%for( var i = 0; i < list.length; i++ ) {%>
+	<tr>
+		<td><%=list[i].category_id%></td>
+		<td><%=list[i].title%></td>
+		<td><%=list[i].create_date%></td>
+		<td>
+			<%if (list[i].status == 0){%>
+			开放
+			<%}else{%>
+			关闭
+			<%}%>
+		</td>	
+		<td>
+			<a href="article/<%=list[i].id%>">修改</a>	
+			|
+			<a href="delete/<%=list[i].id%>">删除</a>
+		</td>
+	</tr>
+	<%}%>
+</table>	
+</body>
+</html>

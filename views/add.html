@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+</head>
+<body>
+	<form method="post" action="insert">
+    <div>
+    	<span>状态：</span>
+    	<span>
+    	<select name="category_status" id="category_status">
+    		<option value=0>开放</option>
+    		<option value=1>关闭</option>
+    	</select>	
+    	</span>
+    </div>
+    <div>
+    	<span>名称：</span>
+    	<span>
+    	<input type="text" name="category_name" id="category_name"/>	
+    	</span>
+    </div>
+    <div>
+    	<input type="submit" value="提交"/>	
+    </div>
+	</form>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title><%=title%></title>
+    <script src="https://cdn.ckeditor.com/4.5.9/standard/ckeditor.js"></script>	
+</head>
+<body>
+	<form method="post" action="insert">
+    <div>
+    	<span>状态：</span>
+    	<span>
+    	<select name="category_status" id="category_status">
+    		<option value=0>开放</option>
+    		<option value=1>关闭</option>
+    	</select>	
+    	</span>
+    </div>
+    <div>
+    	<span>类别：</span>
+    	<span>
+    		<select name="category_id" id="category_id">
+    			<%for( var i = 0; i < categories.length; i++ ) {%>
+    			<option value="<%=categories[i].id%>"><%=categories[i].category_name%></option>
+    			<%}%>	
+    		</select>	
+    	</span>
+    </div>
+    <div>
+    	<span>标题：</span>
+    	<span>
+    	<input type="text" name="title" id="title"/>	
+    	</span>
+    </div>
+    <div>
+    	<span>内容：</span>	
+    	<span>
+    		<textarea name="content" id="content" rows="7" cols="60"></textarea>	
+    		<script>
+	        	CKEDITOR.replace( 'content', {
+			    });
+	        </script>
+    	</span>
+    </div>
+    <div>
+    	<input type="submit" value="提交"/>	
+    </div>
+	</form>
+</body>
+</html>
